@@ -1,0 +1,111 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<title>Crypto Profile | <%= @@name %></title>
+	<meta name="description" content="<%= @@name %>'s Crypto Portfolio - break down of Bitcoin, Etherium, Ripple and many more." />
+
+</head>
+<body>
+
+	<div class="grid-container">
+		<div class="grid-x">
+
+			<!-- Heading -->
+			<div class="small-12 lage-6 large-offset-3">
+				<h1>
+					<span class="my-crypto-portfolio">
+						My Crypto Portfolio
+					</span>
+					<br />
+					<span style="font-weight: 100;">
+						<%= @@name %>
+					</span>
+				</h1>
+			</div>
+			<!-- End Heading -->
+
+			<!-- Profile -->
+			<div class="small-10 small-offset-1 large-6 large-offset-3 profile">
+				<div class="grid-x">
+					<%
+					display_image = ENV["MYCRYPTO_IMAGE_URL"] ? true : false
+
+					if display_image
+					%>
+						<div class="small-3 profile-image-container">
+							<img src="<%= @@image_url %>" id="profile-image" />
+						</div>
+					<% end %>
+					<div class="small-<%= display_image ? 9 : 12 %> 
+						       <%= display_image ? 'small-offset-0' : ''%> profile-bio-container">
+						<p>
+							<%= @@bio %>
+						</p>
+						<a class="follow-button" 
+						   onclick="alert('Position Alerts -- Coming Soon');">
+							Follow Portfolio
+						</a>
+						<a class="follow-button" 
+						   href="http://www.twitter.com/<%= @@twitter_handle %>" target="_blank">
+							More about <%= @@name.split(" ")[0] %>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- End Profile -->
+
+
+		</div>
+	</div>
+
+	<!-- Currency Exposure -->
+	<div class="grid-container positions-list">
+  		<div class="grid-x">
+			<div class="small-12 medium-6 medium-offset-3">
+				<h1 class="my-portfolio">
+					My Portfolio
+				</h1>
+
+				<!-- For each currency exposure position -->
+				<% @portfolio.currency_exposure.each do |ce| %>
+					<div class="grid-x position-container">
+						<div class="small-6">
+							<%= ce[:currency] %> 
+							<% 
+							movement_30d = ce[:movement_30d]
+							if !movement_30d.nil? &&  movement_30d != 0 
+							%>
+								<span class="badge-<%= (movement_30d - 0 > 0 ) ? 'up' : 'down' %>"> <%= "#{(movement_30d * 100).round(0)}%" %> </span>
+							<% end %>
+						</div>
+						<div class="small-6">
+							<%= "#{(ce[:exposure] * 100).round(1).to_s}%" %> 
+						</div>
+					</div>
+				<% end %>
+				<!-- End for each currency exposure position --> 
+
+			</div>
+		</div>
+	</div>
+	<!-- End Currency Exposure -->
+
+	<!-- Footer -->
+	<div class="grid-container">
+		<div class="grid-x">
+			<div class="small-12 footer">
+				<p>Created by <a href="http://www.chrismaddern.com">Chris Maddern</a> on an aircraft from 🇫🇷 to 🇺🇸.</p>
+				<p>Create your own <a href="http://www.mycrypto.fun">Crypto Portfolio</a> 📈</p>
+			</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/what-input.js"></script>
+	<script src="/js/foundation.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Gemfile
+source 'https://rubygems.org'
+ruby "2.3.1"
+
+gem "sinatra"
+gem 'unicorn'
+gem "json"
+gem "faraday"
