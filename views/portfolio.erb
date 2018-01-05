@@ -82,7 +82,7 @@
 							<% end %>
 						</div>
 						<div class="small-6">
-							<%= "#{(ce[:exposure] * 100).round(1).to_s}%" %> 
+							<%= "#{(ce[:exposure] * 100) > 0.05 ? (ce[:exposure] * 100).round(1).to_s : '<0.1'}%" %> 
 						</div>
 					</div>
 				<% end %>

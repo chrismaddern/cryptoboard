@@ -29,7 +29,7 @@ module MyCrypto
       end
 
       def all_positions
-        if ENV["MYCROPTO_FAKE_DATA"]
+        if ENV["MYCRYPTO_FAKE_DATA"]
           fake_positions_response
         else
           positions = []
@@ -130,42 +130,42 @@ module MyCrypto
           {
             currency: "BTC",
             amount: 0.123,
-            price: 15091.28,
+            price: 1,
             usd: 1856.22,
             movement_30d: 0.32
           },
           {
             currency: "XRP",
             amount: 400,
-            price: 3.90,
+            price: 0.001,
             usd: 1560.00,
             movement_30d: 1.28
           },
           {
             currency: "ETH",
             amount: 4,
-            price: 910.00,
+            price: 0.1,
             usd: 3640.00,
             movement_30d: 0.29
           },
           {
             currency: "FUN",
             amount: 2000,
-            price: 0.08,
+            price: 0.0003,
             usd: 160.00,
             movement_30d: 2.38
           },
           {
             currency: "XVG",
             amount: 120,
-            price: 2.93,
+            price: 0.0004,
             usd: 351.60,
             movement_30d: 0
           },
           {
             currency: "MNR",
             amount: 2000,
-            price: 1.28,
+            price: 0.02,
             usd: 2560,
             movement_30d:-0.21
           },

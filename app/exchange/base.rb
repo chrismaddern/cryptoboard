@@ -15,6 +15,10 @@ module MyCrypto
         []
       end
 
+      def market_summary(market: nil)
+        {}
+      end
+
       def self.exchange
         @_exchange ||= MyCrypto::Exchange::Bittrex.new
       end

@@ -9,6 +9,7 @@ module MyCrypto
       attr_accessor :exchange
 
       def estimated_bitcoin_value_per_unit
+        return 1 if currency == "BTC"
         summary = exchange.market_summary(market: "BTC-#{currency}")
         return summary["Last"] if summary
         return 0
