@@ -45,4 +45,4 @@ Contributions welcome! Particularly useful right now are:
 - Allow static (ENV?) positions that aren't on Bittrex (e.g. 12.5 BTC in cold storage)
 
 ### Acknowledgements
-- Thanks to Felix Krause for the Bittrex Exchange code
+- Thanks to [Felix Krause](https://twitter.com/KrauseFx) for the Bittrex Exchange code
