@@ -55,3 +55,7 @@ build-iPhoneSimulator/
 .rvmrc
 
 secrets.env
+
+# Ignore env files needed by docker that might have secrets
+*.env
+!mycrypto.mock.env
