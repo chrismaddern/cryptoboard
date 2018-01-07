@@ -26,6 +26,28 @@ MyCrypto.fun is a simple web app that takes your Cyrypto exchange account and di
 
 `MYCRYPTO_FAKE_DATA`: Uses only a status response for wallets (offline friendly)
 
+### Docker setup
+
+#### Building the image
+
+```shell
+docker build -t mycrypto .
+```
+
+#### Running the application
+
+```shell
+docker run -p 8080:8080 --env-file=/path/to/env-file mycrypto
+```
+
+#### Running the mock application
+
+```shell
+./docker-run-mock
+```
+
+Mock application should be running on http://localhost:8080
+
 ### Supported Exchanges
 - Bittrex
 
