@@ -2,6 +2,9 @@
 
 MyCrypto.fun is a simple web app that takes your Cyrypto exchange account and displays a publicly shareable real-time breakdown of your portfolio -- no amounts, just % holding.
 
+_WIP Design_
+<img src="https://raw.githubusercontent.com/chrismaddern/mycrypto/master/public/images/screen.png" />
+
 ### Getting Started
 1. Clone this repo
 2. `bundle install`
